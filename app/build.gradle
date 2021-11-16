@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'com.google.secrets_gradle_plugin' version '0.4'
+}
+
+android {
+    compileSdk toolVersions.android.compileSdk
+
+    defaultConfig {
+        applicationId "com.example.android.egynews"
+        minSdk toolVersions.android.minSdk
+        targetSdk toolVersions.android.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation supportDependencies.coreKtx
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.material
+    implementation supportDependencies.constraintLayout
+    implementation supportDependencies.retrofit
+    implementation supportDependencies.retrofitAdapterRxjava3
+    implementation supportDependencies.retrofitConverterGson
+    implementation supportDependencies.rxAndroid
+    implementation supportDependencies.rxKotlin
+    implementation supportDependencies.rxJava
+    implementation supportDependencies.lifecycleViewmodelKtx
+    implementation supportDependencies.lifecycleLivedataKtx
+    implementation supportDependencies.picasso
+    implementation supportDependencies.roomKtx
+    implementation supportDependencies.roomRuntime
+    implementation supportDependencies.roomRxjava
+
+    testImplementation supportDependencies.junit
+    androidTestImplementation supportDependencies.testJunit
+    androidTestImplementation supportDependencies.espressoCore
+}
