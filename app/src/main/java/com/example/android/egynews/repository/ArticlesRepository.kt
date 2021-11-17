@@ -5,7 +5,7 @@ import com.example.android.egynews.database.getArticlesDatabase
 import com.example.android.egynews.models.Article
 import com.example.android.egynews.models.ArticlesResponse
 import com.example.android.egynews.network.ArticleApi
-import com.example.android.egynews.utils.Logger
+import com.example.android.egynews.utils.debug
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -37,11 +37,10 @@ class ArticlesRepository (context: Context){
                     }
 
                     override fun onError(e: Throwable) {
-                        Logger.debugError("Error no articles added",e)
                     }
 
                     override fun onComplete() {
-                        Logger.debug("Finished adding articles to database")
+                        debug("Finished adding articles to database")
                     }
 
                 })

@@ -21,9 +21,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="ApiKey"
-            android:value="${EGY_NEWS_KEY}"/>
     </application>
 
 </manifest>

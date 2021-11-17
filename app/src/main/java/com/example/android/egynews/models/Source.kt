@@ -1,5 +1,6 @@
 package com.example.android.egynews.models
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
 data class Source(
